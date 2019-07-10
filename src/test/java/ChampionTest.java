@@ -161,7 +161,7 @@ public class ChampionTest {
 //        assertTrue(champName.equals("다리우스"));
 //        assertThat("다리우스", is(champName));
     }
-    //hasItemInArray를 통해서 배열에 아이템이 있는지 확인하는 테스트
+    //hasItemInArray를 통해서 배열에 아이템이 있는지 확인하는 테스트!!!
     @Test
     public void shouldHaveChampionInArray() {
         String[] popularChampion = {"자르반","쓰레쉬","리신","베인","이즈리얼"};
