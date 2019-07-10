@@ -162,4 +162,8 @@ public class ChampionTest {
 //        assertThat("다리우스", is(champName));
     }
 
+    @Test
+    public void shouldHaveNumOfTopChampionGreaterThan0(){
+
+    }
 }
