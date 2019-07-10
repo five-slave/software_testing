@@ -168,6 +168,14 @@ public class ChampionTest {
         String bestChampion = "자르반";
         assertThat(popularChampion,hasItemInArray(bestChampion));
     }
+    //hasitem 을 통해서 collection에 아이템이 있는지 확인하는 테스트
+    @Test
+    public void shouldHaveChampionInCollection()
+    {
+        List<String> championCollection = Arrays.asList("자르반","쓰레쉬","리신","베인","이즈리얼");
+        String iwantChampion = "이즈리얼";
+        assertThat(championCollection,hasItem(iwantChampion));
+    }
 
 
 }
