@@ -172,6 +172,7 @@ public class ChampionTest {
                 topChampionList.add(championList.get(i));
         }
 
+        assertThat(topChampionList.size(),greaterThan(0));
 
     }
 }
