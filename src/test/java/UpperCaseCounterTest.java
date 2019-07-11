@@ -95,13 +95,14 @@ public class UpperCaseCounterTest {
         String str5 = "ABCdefGHI";
         String str10 = "abcDEFghi";
         String str20 = "ABC defGHI";
+        String str30 = "abc DEFghi";
         boolean retVal5;
 
         retVal5 = equalToIgnoringWhiteSpace(str5).matches(str10);
         System.out.println("result = " + retVal5);
         retVal5 = equalToIgnoringWhiteSpace(str5).matches(str20);
         System.out.println("result = " + retVal5);
-        retVal5 = equalToIgnoringWhiteSpace(str10).matches(str20);
+        retVal5 = equalToIgnoringWhiteSpace(str20).matches(str30);
         System.out.println("result = " + retVal5);
     }
 }
