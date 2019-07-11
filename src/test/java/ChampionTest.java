@@ -169,6 +169,10 @@ public class ChampionTest {
             put("레오나", "바텀");
 
         }};
+
+        assertThat(champion,hasEntry("리신","정글"));
+        assertThat(champion,hasKey("베인"));
+        assertThat(champion,hasValue("바텀"));
     }
 
 }
