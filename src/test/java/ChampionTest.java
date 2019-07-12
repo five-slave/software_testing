@@ -1,10 +1,7 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -160,6 +157,22 @@ public class ChampionTest {
 //        String champName = filterdChampion.get().getName();
 //        assertTrue(champName.equals("다리우스"));
 //        assertThat("다리우스", is(champName));
+    }
+
+    @Test //이석호
+    public void  shouldHaveChampionEntryInHashmap() {
+        HashMap<String, String> champion = new HashMap<String, String>() {{
+            put("다리우스", "탑");
+            put("리신", "정글");
+            put("르블랑", "미드");
+            put("베인", "바텀");
+            put("레오나", "바텀");
+
+        }};
+
+        assertThat(champion,hasEntry("리신","정글"));
+        assertThat(champion,hasKey("베인"));
+        assertThat(champion,hasValue("바텀"));
     }
 
 }
