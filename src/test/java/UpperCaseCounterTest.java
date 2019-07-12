@@ -4,6 +4,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.text.IsEqualIgnoringWhiteSpace.equalToIgnoringWhiteSpace;
 import static org.junit.Assert.*;
 
 public class UpperCaseCounterTest {
@@ -49,6 +50,7 @@ public class UpperCaseCounterTest {
     @Test
     public void getNumberOfUpperCaseCharacterInString_return_6_for_ABCdefGHI(){
         String str = "ABCdefGHI";
+
         int result = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
         //assertTrue로 맞는 테스트 코드 작성
         assertTrue(result  == 6);
@@ -57,6 +59,8 @@ public class UpperCaseCounterTest {
         //assertThat 단정문을 사용해서 True인 테스트 코드 작성
         assertThat(result, is(6));
         System.out.println("result :: " + result);
+
+
     }
 
     //잘못된 값을 참조했을 때 IndexOutOfBoundsException Exception이 발생하는지 테스트 코드 작성
@@ -71,5 +75,34 @@ public class UpperCaseCounterTest {
     public void testShouldRunInLimitedTime() throws InterruptedException {
         Thread.sleep(4000);
         System.out.println("제한된 시간 내에 수행되면 테스트 Passed!");
+    }
+    @Test
+    public void EqualToIgnoringCaseTest() {
+        //대조용
+        String str5 = "ABCdefGHI";
+        String str10 = "abcDEFghi";
+        String str20 = "ABC defGHI";
+        boolean retVal5;
+
+        retVal5 = str5.equalsIgnoreCase(str10);
+        System.out.println("result = " + retVal5);
+        retVal5 = str5.equalsIgnoreCase(str20);
+        System.out.println("result = " + retVal5);
+    }
+    @Test
+    public void equalToIgnoringWhiteSpaceTest() {
+        //대조용
+        String str5 = "ABCdefGHI";
+        String str10 = "abcDEFghi";
+        String str20 = "ABC defGHI";
+        String str30 = "abc DEFghi";
+        boolean retVal5;
+
+        retVal5 = equalToIgnoringWhiteSpace(str5).matches(str10);
+        System.out.println("result = " + retVal5);
+        retVal5 = equalToIgnoringWhiteSpace(str5).matches(str20);
+        System.out.println("result = " + retVal5);
+        retVal5 = equalToIgnoringWhiteSpace(str20).matches(str30);
+        System.out.println("result = " + retVal5);
     }
 }
