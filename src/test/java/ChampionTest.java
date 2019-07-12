@@ -191,4 +191,17 @@ public class ChampionTest {
         assertThat(champion,hasValue("바텀"));
     }
 
+    @Test
+    public void shouldHaveNumOfTopChampionGreaterThan0(){
+
+        List<Champion> topChampionList = new ArrayList<>();
+
+        for(int i=0;i<championList.size();i++){
+            if(championList.get(i).getPosition().equals("탑"))
+                topChampionList.add(championList.get(i));
+        }
+
+        assertThat(topChampionList.size(),greaterThan(0));
+
+    }
 }
